@@ -1,0 +1,27 @@
+class SelectionSort{
+    public static void main(String[] args){
+        int[] arr =  { 64, 25, 12, 22, 11 };
+        int n = arr.length;
+        selectionSort(arr,n);
+        System.out.println("Sorted Array arr:");
+        printArray(arr,n);
+    }
+    public static void selectionSort(int[] arr,int n){
+        for(int i=0;i<n-1;i++){
+            int min_ind = i;
+            for(int j=i+1;j<n;i++){
+                if(arr[j]<arr[min_ind]){
+                    min_ind = j;
+                }
+            }
+                int temp = arr[i];
+                arr[i] = arr[min_ind];
+                arr[min_ind] = temp;
+        }
+    }
+    public static void printArray(int[] arr ,int n){
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
