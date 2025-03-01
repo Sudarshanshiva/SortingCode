@@ -1,0 +1,19 @@
+public class BinaryToDecimal{
+    public static void main(String[] args){
+        int n = 10101001;
+        System.out.prinln(conversion(n));
+    }
+    public static int conversion(int n){
+        int num =n;
+        int rem =0;
+        int base = 1;
+        int temp = num;
+        while(temp>0){
+            int last_digit = temp%10;
+            temp /= 10;
+            rem = last_digit*base;
+            base *= 2;
+        }
+        return rem;
+    }
+}
