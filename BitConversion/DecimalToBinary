@@ -1,0 +1,44 @@
+public class DecimalToBinary{
+    public static void main(String[] args){
+        int n = 67;
+        System.out.println(conversion(n));
+    }
+    public static int conversion(int n){
+        StringBuilder str = new StringBuilder();
+
+        while(n>0){
+            int bit = n%2;
+            str.append((char)('0'+bit));
+            n /=2;
+        }
+        str.reverse();
+        return str.toString();
+    }
+}
+
+//Approach 2
+
+public class DecimalToBinary{
+    public static void main(String[] args){
+        int n = 67;
+        System.out.println(conversion(n));
+    }
+    public static int conversion(int n){
+        StringBuilder str = new StringBuilder();
+        while(n>0){
+            int bit = (n&1);
+            str.append(bit);
+            n = n>>1;
+        }
+        return bit.reverse().toString();
+    }
+}
+
+//Approach 3
+
+public class DecimalToBinary{
+    public static void main(String[] args){
+        int n = 67;
+        System.out.println(Integer.toBinaryString(n));
+    }
+}
